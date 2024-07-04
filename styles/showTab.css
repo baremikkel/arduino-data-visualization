@@ -1,12 +1,19 @@
 #showTab {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 }
-#showTab *{
+#showTab div{
     background-color: aqua;
     width: 40%;
     aspect-ratio: 1/1;
     z-index: 2;
     border-radius: 5%;
+    margin-bottom: 2%;
+}
+#showTab div * {
+    width: auto;
+    margin-left: 5%;
+    height: min-content;
 }

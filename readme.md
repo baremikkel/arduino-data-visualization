@@ -1,6 +1,10 @@
-# syntax
+# JSON syntax
 {
-    "sensor": "sensor_name",
+    "id": int
+    "name": "sensor-name",
+    "sensor_type": "type",
     "timeStamp": "TT-MM-SS",
-    "data": float
+    "data": float,
+    "dataRange_low": float,
+    "dataRange_high": float
 }
