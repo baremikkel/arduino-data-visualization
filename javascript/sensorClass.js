@@ -75,7 +75,7 @@ class sensorClass {
     return dataset_time[id]
   }
   toString() {
-    return (`Name: ${this.getName()}<br/>Type: ${this.getSensorType()}<br/>Timestamp: ${this.getTimeStamp()}<br/>Data: ${this.getData()}<br/>Range: ${this.getDataRangeLow()} - ${this.getDataRangeHigh()} <br/> Id: ${this.getId()}`);
+    return (`Name: ${this.getName()}<br/>Type: ${this.getSensorType()}<br/>Range: ${this.getDataRangeLow()} - ${this.getDataRangeHigh()} <br/> Id: ${this.getId()}`);
   }
   getSpecificSensor(id) {
     return sensors[id]
