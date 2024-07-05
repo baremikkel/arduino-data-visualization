@@ -1,12 +1,8 @@
 var sensor = new sensorClass()
 
-function showData(sensorId){
-    sensor = sensor.getSpecificSensor(sensorId)
-    //console.log(sensor.getName())
-    const ctx = document.getElementById("canvas_"+sensor.getName());
-    //console.log(ctx)
-    console.log(sensor.getDataset(sensor.getId()))
-
+function showData(sensorId) {
+  sensor = sensor.getSpecificSensor(sensorId)
+  const ctx = document.getElementById("canvas_" + sensor.getName());
   new Chart(ctx, {
     type: 'line',
     data: {
