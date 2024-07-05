@@ -21,7 +21,6 @@ async function fetchData() {
             sensor = new sensorClass(data[i].name, data[i].sensor_type, data[i].timeStamp, data[i].data, data[i].dataRange_low, data[i].dataRange_high, data[i].id)
             if(sensorClass.hasSensor(sensor.getId(data[i].id))) {
                 addToDropdown(JSON.stringify(data[i].name), sensor)
-                console.log(sensorClass.hasSensor(sensor.getId(data[i].id)))
             }
         }
     }
