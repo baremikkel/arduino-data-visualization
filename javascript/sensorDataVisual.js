@@ -1,9 +1,9 @@
 var sensor = new sensorClass()
-
+var chart
 function showData(sensorId) {
   sensor = sensor.getSpecificSensor(sensorId)
   const ctx = document.getElementById("canvas_" + sensor.getName());
-  new Chart(ctx, {
+  chart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: sensor.getDatasetTime(sensor.getId()),

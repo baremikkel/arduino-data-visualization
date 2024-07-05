@@ -107,5 +107,9 @@ class sensorClass {
   setDataRangeHigh(newDataRangeHigh) {
     this.dataRange_high = newDataRangeHigh;
   }
-
+  addDataToSet(id, data, timeStamp){
+    dataset[id].push(data);
+    dataset_time[id].push(timeStamp);
+    showData(id)
+  }
 }
