@@ -1,32 +1,37 @@
 const { disable } = require("express/lib/application");
 
 var dataSize
+var data
 
 //Collect the data from Api 
 async function fetchData() {
-    var data
     try {
         const response = await fetch('http://localhost:3000/api/data')
         data = await response.json();
-        //document.getElementById('dataDisplay').innerText += JSON.stringify(data[i].sensor);
     }
     catch (error) {
-        //alert("Cannot connect to servers")
-        return
+        return error
     }
-    if (!data.length)
-        alert("No data on endpoint")
+    if (!data.length){
+        document.getElementById('showTab').innerHTML = ''
+        document.getElementById('dropdown').innerHTML = ''
+        sensorClass.clearArrays()
+        data = []
+        dataSize = undefined
+    }
     else {
+        console.log(data.length >dataSize, dataSize == undefined)
         if(dataSize < data.length || dataSize == undefined){
             dataSize = data.length
             var sensor
             for (var i = 0; i < data.length; i++) {
+                console.log(data[i],"f")
                 sensor = new sensorClass(data[i].name, data[i].sensor_type, data[i].timeStamp, data[i].data, data[i].dataRange_low, data[i].dataRange_high, data[i].id)
+                console.log(sensor.getId(),"f")
                 if(sensorClass.hasSensor(sensor.getId(data[i].id))) {
                     addToDropdown(JSON.stringify(data[i].name), sensor)
                 }
                 if(!(i < data.length-1)) {
-                    console.log(data[i].timeStamp)
                     updateDataGraph(data[i].id, data[i].data, data[i].timeStamp)
                 }
                     

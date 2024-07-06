@@ -83,6 +83,11 @@ class sensorClass {
   static hasSensor(id) {
     return sensors.some(sensor => sensor.id === id)
   }
+  static clearArrays() {
+    sensors.length = 0;
+    dataset.length = 0;
+    dataset_time.length = 0;
+}
   // Setters
   setName(newName) {
     this.name = newName;

@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -6,16 +5,23 @@ const port = 3000;
 let data = [];
 app.use(bodyParser.json());
 
-//post data to the api
+// Post data to the API
 app.post('/api/data', (req, res) => {
   data.push(req.body);
   console.log('Received data:', data);
   res.send('Data received');
 });
-//get the data from the api
+
+// Get the data from the API
 app.get('/api/data', (req, res) => {
-  // Example response for the GET request
   res.json(data);
+});
+
+// Clear all the data received
+app.delete('/api/data', (req, res) => {
+  data = [];
+  console.log('Data cleared');
+  res.send('All data cleared');
 });
 
 app.listen(port, () => {
