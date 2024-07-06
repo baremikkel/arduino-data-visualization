@@ -25,6 +25,11 @@ async function fetchData() {
                 if(sensorClass.hasSensor(sensor.getId(data[i].id))) {
                     addToDropdown(JSON.stringify(data[i].name), sensor)
                 }
+                if(!(i < data.length-1)) {
+                    console.log(data[i].timeStamp)
+                    updateDataGraph(data[i].id, data[i].data, data[i].timeStamp)
+                }
+                    
             }
         }
     }
@@ -57,7 +62,7 @@ function showTabDisplay(sensor_string, sensor, button) {
     canvas.id = "canvas_" + sensor_string.toString()
     div.appendChild(canvas)
 }
-function startFetching(){
+function startFetching(){ 
     fetchData()
     setInterval(fetchData,1000)
 }

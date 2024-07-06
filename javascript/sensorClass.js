@@ -19,7 +19,7 @@ class sensorClass {
         // If the sensor already exists, update the dataset and dataset_time arrays
         dataset[id].push(...data);
         dataset_time[id].push(...timeStamp);
-    } else {
+      } else {
         // If the sensor does not exist, create a new one
         if (name) {
             if (!dataset[id]) {
@@ -110,6 +110,6 @@ class sensorClass {
   addDataToSet(id, data, timeStamp){
     dataset[id].push(data);
     dataset_time[id].push(timeStamp);
-    showData(id)
+    //showData(id)
   }
 }
