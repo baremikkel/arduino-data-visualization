@@ -6,7 +6,7 @@ function updateDataGraph(sensorId, newData, newLabels) {
   var canvas = Chart.getChart("canvas_" + sensor.getName());
   
   if (!canvas) {
-      console.error(`Chart not found for canvas id: canvas_${sensor.getName()}`);
+      console.error(`Chart not found`)
       return;
   }
   if (!Array.isArray(newData)) {
