@@ -40,10 +40,10 @@ function showData(sensor) {
   chart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: [],//sensor.getDatasetTime(sensor.getId()),
+      labels: [],
       datasets: [{
         label: 'Visual of data',
-        data: [],//sensor.getDataset(sensor.getId()),
+        data: [],
         borderWidth: 1
       }]
     },
@@ -56,7 +56,7 @@ function showData(sensor) {
         }
       },
       animation: {
-        duration: 250
+        duration: 125
       }
     }
   });
