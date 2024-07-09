@@ -1,16 +1,23 @@
-#include "Device.h"
+#include "ScreenConnect.h"
 
 // Create a Device object globally
-Device myDevice("TemperatureSensor", "Analog", 0, 1023,"192.168.1.89");
+const char* ssid = "SkovboUdlejning";
+const char* password = "jollywarthog77";
+ScreenConnect tempSensor("TemperatureSensor", "Analog", 0, 4095);
+#define ADC_INPUT 32
 
 void setup() {
-  Serial.begin(9600);
-  myDevice.begin("Tystrupvej38_5G","L1nksysM3sh");
+  pinMode(ADC_INPUT, INPUT);
+  Serial.begin(115200);
+  tempSensor.begin(ssid,password, "10.64.128.60");
   // Print the details of the device
 
 }
 
 void loop() {
   // Your main code
-  myDevice.sendData(47,1000);
+  int test = analogRead(ADC_INPUT);
+  Serial.println(test);
+  tempSensor.sendData(test,250);
+  //delay(500);
 }

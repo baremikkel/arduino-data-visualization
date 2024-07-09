@@ -1,17 +1,18 @@
-#ifndef Device_h
-#define Device_h
+#ifndef ScreenConnect_h
+#define ScreenConnect_h
 
 #include <Arduino.h>
 
-class Device {
+class ScreenConnect {
   public:
-    Device(String sensorName, String sensorType, int minVal, int maxVal, String ip);
-    void begin(String ssid, String password);
+    ScreenConnect(String sensorName, String sensorType, int minVal, int maxVal);
+    void begin(String ssid, String password, String ip);
     int getId();
     String getName();
     String getType();
     int getMinVal();
     int getMaxVal();
+    void setIPaddress(String ip);
     void sendData(float sensorData, int delayMillis);
 
   private:
@@ -23,7 +24,7 @@ class Device {
     const char* _ssid;
     const char* _password;
     String _ip;
-    String getTime()
+    String getTime();
 };
 
 #endif
