@@ -5,11 +5,12 @@
     align-items: center;
 }
 #showTab div{
-    background-color: rgb(220, 219, 219);
+    background-color: rgba(112, 220, 234, 0.522);
     width: 40%;
     aspect-ratio: 1/1;
     z-index: 2;
     border-radius: 5%;
+    box-shadow: 0 30px 40px rgba(91, 180, 192, 0.522);
     margin-bottom: 2%;
 }
 #showTab div * {
@@ -19,7 +20,13 @@
     height: min-content;
 }
 
-#dropdown button {
+#buttonGroup button {
     width: 100%;
     height: 50%;
+
+}
+
+button {
+    background-color: rgb(126,203,205);
+    ;
 }
