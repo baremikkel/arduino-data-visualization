@@ -115,6 +115,5 @@ class sensorClass {
   addDataToSet(id, data, timeStamp){
     dataset[id].push(data);
     dataset_time[id].push(timeStamp);
-    //showData(id)
-  }
+    }
 }

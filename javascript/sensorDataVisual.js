@@ -60,6 +60,5 @@ function showData(sensor) {
       }
     }
   });
-  console.log(sensor.getDataset(sensor.getId()))
   updateDataGraph(sensor.getId(),sensor.getDataset(sensor.getId()),sensor.getDatasetTime(sensor.getId()))
 }

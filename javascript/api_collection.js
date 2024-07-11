@@ -20,14 +20,11 @@ async function fetchData() {
         dataSize = undefined
     }
     else {
-        console.log(data.length >dataSize, dataSize == undefined)
         if(dataSize < data.length || dataSize == undefined){
             dataSize = data.length
             var sensor
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i],"f")
                 sensor = new sensorClass(data[i].name, data[i].sensor_type, data[i].timeStamp, data[i].data, data[i].dataRange_low, data[i].dataRange_high, data[i].id)
-                console.log(sensor.getId(),"f")
                 if(sensorClass.hasSensor(sensor.getId(data[i].id))) {
                     addToButtonGroup(JSON.stringify(data[i].name), sensor)
                 }
